@@ -657,6 +657,18 @@
     border-radius: 28px 28px 0 0;
   }
 
+  .region-pill {
+    gap: 4px;
+  }
+
+  .region-pill__icon {
+    width: 28px;
+  }
+
+  .region-pill__name {
+    font-size: 14px;
+  }
+
   .info-card {
     padding: 16px 14px 18px 10px;
     gap: 10px;
