@@ -524,9 +524,11 @@
   background: #fffdf1;
 }
 
+/* align-self + height: auto agar Safari (iPhone) tidak meregangkan gambar setinggi kartu. */
 .info-card__image {
+  align-self: flex-start;
   width: 200px;
-  height: fit-content;
+  height: auto;
   margin: 0 -24px 0 -12px;
   flex-shrink: 0;
 }
