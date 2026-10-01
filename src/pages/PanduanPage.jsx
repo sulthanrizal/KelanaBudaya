@@ -5,6 +5,13 @@ import { KUIS } from '../data/kuis.js'
 import { PULAU } from '../data/budaya.js'
 import './PanduanPage.css'
 
+const PANDUAN_PDF_ID = '1-fvoJt-VFYH2dGy-nduBTN0UOjASrQ_U'
+const PANDUAN_PDF = {
+  preview: `https://drive.google.com/file/d/${PANDUAN_PDF_ID}/preview`,
+  view: `https://drive.google.com/file/d/${PANDUAN_PDF_ID}/view`,
+  download: `https://drive.google.com/uc?export=download&id=${PANDUAN_PDF_ID}`,
+}
+
 const LANGKAH = [
   { judul: 'Mulai petualangan', teks: 'Tekan tombol "Ayo Mulai" di layar pembuka, lalu "Mulai Jelajah" di halaman Home.' },
   { judul: 'Pilih pulau', teks: 'Di bagian Peta Jelajah Budaya, pilih salah satu dari tujuh wilayah Indonesia.' },
@@ -44,6 +51,27 @@ function PanduanPage() {
               Panduan penggunaan, tips mendampingi warga belajar, dan ide aktivitas seru untuk menjelajahi
               keberagaman budaya Indonesia bersama-sama.
             </p>
+          </div>
+        </section>
+
+        <section className="panduan-section" aria-labelledby="buku-panduan">
+          <h2 id="buku-panduan" className="panduan-section__title">Buku Panduan (PDF)</h2>
+          <div className="pdf-card">
+            <iframe
+              src={PANDUAN_PDF.preview}
+              title="Buku Panduan Penggunaan Website Kelana Budaya"
+              className="pdf-card__frame"
+              loading="lazy"
+              allow="autoplay"
+            />
+            <div className="pdf-card__actions">
+              <a href={PANDUAN_PDF.view} target="_blank" rel="noreferrer" className="pill-link pill-link--quiz">
+                Buka PDF di Tab Baru ↗
+              </a>
+              <a href={PANDUAN_PDF.download} target="_blank" rel="noreferrer" className="pill-link">
+                Unduh PDF ↓
+              </a>
+            </div>
           </div>
         </section>
 
