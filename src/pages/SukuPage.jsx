@@ -39,7 +39,8 @@ function SukuPage() {
 
       <div className="culture-grid">
         {suku.items.map((item) => (
-          <CultureCard key={item.id} item={item} />
+          // Key menyertakan suku agar kartu (dan suaranya) dibuat ulang saat pindah suku.
+          <CultureCard key={`${sukuId}-${item.id}`} item={item} />
         ))}
       </div>
 

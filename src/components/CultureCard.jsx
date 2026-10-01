@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { youtubeUrl } from '../data/budaya.js'
+import { playInstrument, stopInstrument } from '../audio/instrumentPlayer.js'
 
 function PlayBadge() {
   return (
@@ -27,39 +28,72 @@ export function VideoThumb({ src, alt, item, className = '' }) {
   )
 }
 
-function SoundButton({ src, name }) {
-  const audioRef = useRef(null)
+function useInstrumentSound(src) {
+  const ownerRef = useRef(Symbol('instrument'))
   const [playing, setPlaying] = useState(false)
 
-  useEffect(() => () => audioRef.current?.pause(), [])
+  // Hentikan suara saat kartu hilang, misalnya pindah halaman.
+  useEffect(() => {
+    const owner = ownerRef.current
+    return () => stopInstrument(owner)
+  }, [])
 
   const toggle = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(src)
-      audioRef.current.addEventListener('ended', () => setPlaying(false))
+    if (playing) {
+      stopInstrument(ownerRef.current)
+      return
     }
-    const audio = audioRef.current
-    if (audio.paused) {
-      audio.currentTime = 0
-      audio.play().then(() => setPlaying(true)).catch(() => {})
-    } else {
-      audio.pause()
-      setPlaying(false)
-    }
+    setPlaying(true)
+    playInstrument(src, ownerRef.current, () => setPlaying(false)).catch(() => {})
   }
 
+  return { playing, toggle }
+}
+
+function Equalizer() {
   return (
-    <button
-      type="button"
-      className={`sound-button${playing ? ' sound-button--on' : ''}`}
-      onClick={toggle}
-      aria-label={`${playing ? 'Hentikan' : 'Dengarkan'} suara ${name}`}
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-        <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" />
-        <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
-      </svg>
-    </button>
+    <span className="equalizer" aria-hidden="true">
+      <span />
+      <span />
+      <span />
+    </span>
+  )
+}
+
+function InstrumentMedia({ item }) {
+  const { playing, toggle } = useInstrumentSound(item.audio)
+
+  return (
+    <>
+      <div className={`culture-card__media culture-card__media--sound${playing ? ' is-playing' : ''}`}>
+        {/* Gambar ikut bisa diklik; tombol di bawah tetap jadi kontrol utama (keyboard & pembaca layar). */}
+        <img src={item.gambar} alt={item.nama} loading="lazy" className="culture-card__image" onClick={toggle} />
+        {playing && (
+          <span className="culture-card__playing">
+            <Equalizer /> Sedang diputar
+          </span>
+        )}
+      </div>
+      <button
+        type="button"
+        className={`listen-button${playing ? ' listen-button--on' : ''}`}
+        onClick={toggle}
+        aria-pressed={playing}
+        aria-label={`${playing ? 'Hentikan' : 'Dengarkan'} suara ${item.nama}`}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+          {playing ? (
+            <path d="M8 6v12M16 6v12" strokeWidth="3" />
+          ) : (
+            <>
+              <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" />
+              <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+            </>
+          )}
+        </svg>
+        {playing ? 'Hentikan' : 'Dengarkan Suara'}
+      </button>
+    </>
   )
 }
 
@@ -69,14 +103,17 @@ function CultureCard({ item }) {
   return (
     <article className={`culture-card${wide ? ' culture-card--wide' : ''}`}>
       <h3 className="culture-card__category">{item.kategori}</h3>
-      <div className="culture-card__media">
-        {item.video ? (
-          <VideoThumb src={item.gambar} alt={item.nama} item={item} />
-        ) : (
-          <img src={item.gambar} alt={item.nama} loading="lazy" className="culture-card__image" />
-        )}
-        {item.audio && <SoundButton src={item.audio} name={item.nama} />}
-      </div>
+      {item.audio ? (
+        <InstrumentMedia item={item} />
+      ) : (
+        <div className="culture-card__media">
+          {item.video ? (
+            <VideoThumb src={item.gambar} alt={item.nama} item={item} />
+          ) : (
+            <img src={item.gambar} alt={item.nama} loading="lazy" className="culture-card__image" />
+          )}
+        </div>
+      )}
       {item.sumber && <p className="culture-card__source">Sumber: {item.sumber}</p>}
       <p className="culture-card__name">{item.nama}</p>
       <p className="culture-card__desc">{item.deskripsi}</p>

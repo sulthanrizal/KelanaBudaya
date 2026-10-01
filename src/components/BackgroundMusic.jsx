@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { INSTRUMENT_EVENT } from '../audio/instrumentPlayer.js'
 
 const UNLOCK_EVENTS = ['pointerdown', 'keydown', 'touchstart']
 
@@ -30,8 +31,24 @@ function BackgroundMusic({ src, volume = 0.5 }) {
       UNLOCK_EVENTS.forEach((e) => window.addEventListener(e, unlock))
     })
 
+    // Jeda musik latar selama suara alat musik diputar, lalu lanjutkan lagi.
+    let resumeAfterInstrument = false
+    const onInstrument = (event) => {
+      if (event.detail.playing) {
+        if (!audio.paused || resumeAfterInstrument) {
+          resumeAfterInstrument = true
+          audio.pause()
+        }
+      } else if (resumeAfterInstrument) {
+        resumeAfterInstrument = false
+        audio.play().catch(() => {})
+      }
+    }
+    window.addEventListener(INSTRUMENT_EVENT, onInstrument)
+
     return () => {
       cancelled = true
+      window.removeEventListener(INSTRUMENT_EVENT, onInstrument)
       removeUnlock()
       audio.pause()
       audioRef.current = null
