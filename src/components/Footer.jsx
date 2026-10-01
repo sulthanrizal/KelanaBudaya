@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import footerBg from '../assets/home/footer-bg.webp'
 import panduan from '../assets/home/panduan.webp'
 import kontak from '../assets/home/kontak.webp'
@@ -6,7 +7,7 @@ import kidsWalking from '../assets/home/kids-walking.webp'
 import ArrowIcon from './ArrowIcon.jsx'
 
 const CONTACTS = [
-  { label: 'kelanabudaya@gmail.com', href: 'mailto:kelanabudaya@gmail.com' },
+  { label: 'kelanabudayaunsika@gmail.com', href: 'mailto:kelanabudayaunsika@gmail.com' },
   { label: 'Karawang, Jawa Barat' },
 ]
 
@@ -22,13 +23,13 @@ function Footer() {
             <div className="info-card__body">
               <h2 className="info-card__title">Panduan</h2>
               <p className="info-card__text">
-                Panduan penggunaan, tips mendampingi warga belajar,dan ide aktivitas seru
+                Panduan penggunaan, tips mendampingi warga belajar, dan ide aktivitas seru
                 bersama warga belajar.
               </p>
-              <button type="button" className="info-card__button">
+              <Link to="/panduan" className="info-card__button">
                 Lihat Panduan
                 <ArrowIcon className="info-card__arrow" />
-              </button>
+              </Link>
             </div>
           </section>
 

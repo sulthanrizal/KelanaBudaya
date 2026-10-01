@@ -1,0 +1,190 @@
+.panduan-page {
+  padding: clamp(32px, 4vw, 56px) clamp(16px, 4vw, 48px) 72px;
+  background: #ffe899;
+}
+
+.panduan-hero,
+.panduan-section {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.panduan-hero {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  padding: clamp(20px, 3vw, 32px);
+  border: 4px solid #f6a90d;
+  border-radius: 24px;
+  background: #fffdf1;
+}
+
+.panduan-hero__image {
+  width: clamp(120px, 20vw, 220px);
+  flex-shrink: 0;
+}
+
+.panduan-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.15;
+}
+
+.panduan-hero__text {
+  margin-top: 8px;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.5;
+}
+
+.panduan-section {
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.panduan-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 700;
+}
+
+.langkah-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.langkah {
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 3px solid #ff904d;
+  border-radius: 18px;
+  background: #fffbf1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.langkah__nomor {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.langkah__judul {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.wilayah-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.wilayah-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 20px;
+  border-radius: 22px;
+  font-size: 16px;
+}
+
+.wilayah-card h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.wilayah-card .pill-link {
+  margin-top: auto;
+}
+
+.wilayah-card--barat {
+  background: #feedb8;
+}
+
+.wilayah-card--tengah {
+  background: #fdbdbc;
+}
+
+.wilayah-card--timur {
+  background: #c4e8ec;
+}
+
+.wilayah-card__meta {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 20px 24px 20px 44px;
+  border: 3px solid #ff904d;
+  border-radius: 18px;
+  background: #fffbf1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.tips-list li::marker {
+  content: '★  ';
+  color: #f6a90d;
+}
+
+.aktivitas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.aktivitas-card {
+  padding: 18px 20px;
+  border: 3px solid #ff904d;
+  border-radius: 18px;
+  background: #fffbf1;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.aktivitas-card__emoji {
+  font-size: 34px;
+}
+
+.aktivitas-card h3 {
+  margin: 4px 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.panduan-page__back {
+  margin-top: 48px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .panduan-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}

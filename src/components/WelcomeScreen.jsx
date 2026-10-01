@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import sky from '../assets/home/hero-sky.webp'
-import landscape from '../assets/home/hero-landscape.webp'
+import background from '../assets/welcome/bg.webp'
 import logo from '../assets/home/logo.webp'
-import boy from '../assets/home/boy.webp'
-import girl from '../assets/home/girl.webp'
+import boy from '../assets/welcome/boy.webp'
+import girl from '../assets/welcome/girl.webp'
 import ArrowIcon from './ArrowIcon.jsx'
 
 const FADE_MS = 500
@@ -38,8 +37,7 @@ function WelcomeScreen({ onStart }) {
       aria-labelledby="welcome-title"
       style={{ '--fade-ms': `${FADE_MS}ms` }}
     >
-      <img src={sky} alt="" className="welcome__bg" aria-hidden="true" />
-      <img src={landscape} alt="" className="welcome__bg welcome__bg--landscape" aria-hidden="true" />
+      <img src={background} alt="" className="welcome__bg" aria-hidden="true" />
 
       <div className="welcome__card">
         <img src={logo} alt="Kelana Budaya" className="welcome__logo" width="320" height="320" />

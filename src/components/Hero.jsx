@@ -29,10 +29,14 @@ function Hero() {
           pengalaman belajar yang menyenangkan.
         </p>
 
-        <a href="#peta" className="hero__cta">
+        <button
+          type="button"
+          className="hero__cta"
+          onClick={() => document.getElementById('peta')?.scrollIntoView({ behavior: 'smooth' })}
+        >
           Mulai Jelajah
           <ArrowIcon className="hero__cta-arrow" />
-        </a>
+        </button>
       </div>
 
       <img src={boy} alt="" className="hero__kid hero__kid--boy" width="800" height="800" />

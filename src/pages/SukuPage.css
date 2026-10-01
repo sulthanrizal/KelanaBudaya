@@ -1,0 +1,159 @@
+.suku-page {
+  min-height: 100vh;
+  padding: 28px clamp(16px, 4vw, 48px) 64px;
+  background: #ffe899;
+}
+
+.suku-page__header {
+  text-align: center;
+}
+
+.suku-page__eyebrow {
+  font-size: 16px;
+  color: #8a5a00;
+}
+
+.suku-page__title {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sejarah-card {
+  max-width: 1000px;
+  margin: 28px auto 0;
+  padding: 24px clamp(18px, 3vw, 32px) 28px;
+  border: 5px solid #ff904d;
+  border-radius: 22px;
+  background: #fffbf1;
+}
+
+.sejarah-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 700;
+}
+
+.sejarah-card__text {
+  margin-top: 6px;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.sejarah-card__video {
+  width: min(420px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 18px auto 0;
+}
+
+.sejarah-card__cta {
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
+  text-align: center;
+}
+
+.culture-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 36px);
+  max-width: 1040px;
+  margin: 32px auto 0;
+}
+
+.culture-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  padding: 16px 18px 22px;
+  border: 5px solid #ff904d;
+  border-radius: 22px;
+  background: #fffbf1;
+  text-align: center;
+}
+
+.culture-card--wide {
+  width: min(420px, 100%);
+}
+
+.culture-card__category {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.culture-card__media {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.culture-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.culture-card--wide .video-thumb {
+  aspect-ratio: 16 / 9;
+}
+
+.culture-card__source {
+  margin-top: 6px;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.culture-card__name {
+  margin-top: 10px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.culture-card__desc {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.suku-page__more {
+  max-width: 1040px;
+  margin: 48px auto 0;
+  text-align: center;
+}
+
+.suku-page__more-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.suku-page__more-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+@media (max-width: 720px) {
+  .suku-page {
+    padding-top: 84px;
+  }
+
+  .culture-card {
+    width: 100%;
+    max-width: 420px;
+  }
+}
