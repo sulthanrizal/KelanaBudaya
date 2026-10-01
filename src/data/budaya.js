@@ -87,7 +87,7 @@ export const SUKU = {
     items: [
       item('sunda', 'makanan', 'Combro', 'Camilan dari parutan singkong dengan isi tumisan oncom pedas di dalamnya.'),
       item('sunda', 'rumah', 'Imah Jolopong', 'Rumah adat Sunda beratap jolopong (pelana panjang) dengan dinding anyaman bambu (gedek), sederhana dan fungsional.'),
-      item('sunda', 'musik', 'Angklung', 'Alat musik tradisional Sunda yang terbuat dari bambu. Angklung dimainkan dengan cara digoyangkan dan menghasilkan bunyi yang khas.'),
+      item('sunda', 'musik', 'Angklung', 'Alat musik tradisional Sunda yang terbuat dari bambu. Angklung dimainkan dengan cara digoyangkan dan menghasilkan bunyi yang khas.', { audio: sound('angklung (sunda).mp3') }),
       item('sunda', 'tari', 'Tari Jaipong', 'Tarian populer ciptaan Gugum Gumbira yang memadukan unsur pencak silat, ketuk tilu, dan ronggeng dengan gerakan lincah serta energik.', { video: 'Tari Jaipong Khas Jawa Barat Seni Tradisional' }),
       item('sunda', 'cerita', 'Sangkuriang - Tangkuban Perahu', 'Legenda Sangkuriang yang menendang perahu buatannya hingga tertelungkup menjadi Gunung Tangkuban Perahu.', { video: 'Cerita Rakyat Tangkuban Perahu Sangkuriang' }),
     ],
@@ -227,7 +227,7 @@ export const SUKU = {
     items: [
       item('asmat', 'makanan', 'Sate Ulat Sagu', 'Hidangan khas Suku Asmat yang sangat terkenal di Papua dan menjadi makanan kesukaan masyarakat Asmat.', { sumber: 'idntimes.com' }),
       item('asmat', 'rumah', 'Jew', 'Rumah adat Suku Asmat yang berfungsi sebagai tempat berkumpul masyarakat, terutama kaum laki-laki, untuk kegiatan sosial, musyawarah, dan kegiatan adat.', { sumber: 'foto.okezone.com' }),
-      item('asmat', 'musik', 'Tifa', 'Alat musik pukul yang terbuat dari kayu dan kulit hewan.', { sumber: 'trek-papua.com' }),
+      item('asmat', 'musik', 'Tifa', 'Alat musik pukul yang terbuat dari kayu dan kulit hewan.', { audio: sound('SUARA TIFA asmat - ftm (128k).mp3'), sumber: 'trek-papua.com' }),
       item('asmat', 'pakaian', 'Pakaian Rumbai', 'Pakaian yang terbuat dari daun sagu atau serat tumbuhan, digunakan untuk menutupi bagian tubuh.', { sumber: 'lampung.disway.id' }),
       item('asmat', 'tari', 'Tari Tobe', 'Tarian tradisional Suku Asmat yang menggambarkan semangat keberanian, kekuatan, dan kebersamaan.', { video: 'Tari Tobe Asmat' }),
     ],
