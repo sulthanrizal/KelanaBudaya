@@ -2,22 +2,67 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kelana Budaya – Media Pembelajaran Interaktif Budaya Indonesia</title>
     <meta
       name="description"
-      content="Kelana Budaya adalah media pembelajaran digital interaktif untuk menjelajahi keberagaman budaya Indonesia."
+      content="Kelana Budaya adalah media pembelajaran digital interaktif untuk menjelajahi keberagaman budaya Indonesia: makanan, rumah adat, alat musik, pakaian, tarian, dan cerita rakyat dari Sumatera hingga Papua, lengkap dengan kuis."
     />
+    <link rel="canonical" href="https://kelana-budaya.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#5bb622" />
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Pratinjau saat link dibagikan (WhatsApp, Facebook, X, dll.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kelana Budaya" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:url" content="https://kelana-budaya.vercel.app/" />
+    <meta property="og:title" content="Kelana Budaya – Jelajahi Keragaman, Kenali Budayanya" />
+    <meta
+      property="og:description"
+      content="Media pembelajaran digital interaktif untuk menjelajahi keberagaman budaya Indonesia, lengkap dengan peta jelajah dan kuis."
+    />
+    <meta property="og:image" content="https://kelana-budaya.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo Kelana Budaya dengan dua anak penjelajah berpakaian adat" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Data terstruktur: membantu Google menampilkan nama situs "Kelana Budaya". -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Kelana Budaya",
+        "alternateName": "KelanaBudaya",
+        "url": "https://kelana-budaya.vercel.app/",
+        "description": "Media pembelajaran digital interaktif untuk menjelajahi keberagaman budaya Indonesia.",
+        "inLanguage": "id-ID",
+        "image": "https://kelana-budaya.vercel.app/og-image.jpg"
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Kelana Budaya</title>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Kelana Budaya</h1>
+      <p>
+        Kelana Budaya adalah media pembelajaran digital interaktif yang mengajak peserta didik menjelajahi
+        keberagaman budaya Indonesia. Aktifkan JavaScript untuk menggunakan website ini.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

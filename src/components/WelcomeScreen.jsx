@@ -41,9 +41,9 @@ function WelcomeScreen({ onStart }) {
 
       <div className="welcome__card">
         <img src={logo} alt="Kelana Budaya" className="welcome__logo" width="320" height="320" />
-        <h1 id="welcome-title" className="welcome__title">
+        <h2 id="welcome-title" className="welcome__title">
           Siap Berpetualang?
-        </h1>
+        </h2>
         <p className="welcome__text">Ayo jelajahi keberagaman budaya Indonesia bersama kami!</p>
         <button ref={buttonRef} type="button" className="welcome__button" onClick={start}>
           Ayo Mulai
