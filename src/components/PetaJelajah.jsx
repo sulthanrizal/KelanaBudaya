@@ -16,7 +16,7 @@ const PANEL_W = 1264
 const PANEL_H = 712
 
 const REGIONS = [
-  { id: 'sumatera', name: 'Sumatra', icon: iconSumatra, bg: '#fcd28b', accent: '#fe8f02', box: [12, 151, 307, 77] },
+  { id: 'sumatera', name: 'Sumatera', icon: iconSumatra, bg: '#fcd28b', accent: '#fe8f02', box: [12, 151, 307, 77] },
   { id: 'kalimantan', name: 'Kalimantan', icon: iconKalimantan, bg: '#b9d57e', accent: '#2d5a2f', box: [344, 156, 336, 84] },
   { id: 'sulawesi', name: 'Sulawesi', icon: iconSulawesi, bg: '#e3d0f5', accent: '#a319c6', box: [707, 155, 327, 84] },
   { id: 'maluku', name: 'Maluku', icon: iconMaluku, bg: '#9ccdf1', accent: '#0084fc', box: [992, 260, 259, 69] },
